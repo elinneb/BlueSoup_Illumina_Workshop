@@ -1,4 +1,4 @@
-name: fastqc
+name: shotgun_assembly
 channels:
   - conda-forge
   - bioconda
