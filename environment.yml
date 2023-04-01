@@ -7,3 +7,4 @@ dependencies:
   - fastqc
   - trimmomatic
   - megahit
+  - kraken2
