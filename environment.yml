@@ -8,3 +8,4 @@ dependencies:
   - trimmomatic
   - megahit
   - kraken2
+  - kraken-biom
