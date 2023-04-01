@@ -9,4 +9,3 @@ dependencies:
   - megahit
   - kraken2
   - kraken-biom
-  - singlem
