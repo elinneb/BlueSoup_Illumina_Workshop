@@ -1,4 +1,4 @@
-name: shotgun_assembly
+name: 596-15_analyses
 channels:
   - conda-forge
   - bioconda
