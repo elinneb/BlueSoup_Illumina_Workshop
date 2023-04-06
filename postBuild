@@ -1,5 +1,6 @@
 #!/bin/bash
 
+mkdir 16S_SILVA_DB
 curl -L https://figshare.com/ndownloader/files/40054801 -o 16S_SILVA_DB/database50mers.kmer_distrib
 curl -L https://figshare.com/ndownloader/files/40054804 -o 16S_SILVA_DB/database75mers.kmer_distrib
 curl -L https://figshare.com/ndownloader/files/40054807 -o 16S_SILVA_DB/database100mers.kmer_distrib
