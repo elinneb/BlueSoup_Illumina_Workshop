@@ -6,6 +6,4 @@ channels:
 dependencies:
   - fastqc
   - trimmomatic
-  - megahit
-  - kraken2
   - sourmash
