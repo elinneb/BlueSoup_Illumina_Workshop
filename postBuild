@@ -1,0 +1,13 @@
+#!/bin/bash
+
+mkdir 16S_SILVA_DB
+curl -L https://figshare.com/ndownloader/files/40054801 -o 16S_SILVA_DB/database50mers.kmer_distrib
+curl -L https://figshare.com/ndownloader/files/40054804 -o 16S_SILVA_DB/database75mers.kmer_distrib
+curl -L https://figshare.com/ndownloader/files/40054807 -o 16S_SILVA_DB/database100mers.kmer_distrib
+curl -L https://figshare.com/ndownloader/files/40054810 -o 16S_SILVA_DB/database150mers.kmer_distrib
+curl -L https://figshare.com/ndownloader/files/40054813 -o 16S_SILVA_DB/database200mers.kmer_distrib
+curl -L https://figshare.com/ndownloader/files/40054816 -o 16S_SILVA_DB/database250mers.kmer_distrib
+curl -L https://figshare.com/ndownloader/files/40054819 -o 16S_SILVA_DB/hash.k2d
+curl -L https://figshare.com/ndownloader/files/40054822 -o 16S_SILVA_DB/opts.k2d
+curl -L https://figshare.com/ndownloader/files/40054825 -o 16S_SILVA_DB/README.md
+curl -L https://figshare.com/ndownloader/files/40054828 -o 16S_SILVA_DB/taxo.k2d
