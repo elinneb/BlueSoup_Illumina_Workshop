@@ -10,3 +10,4 @@ dependencies:
   - kraken-biom
   - numpy
   - biom-format
+  - parallel
