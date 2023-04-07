@@ -1,7 +1,7 @@
 #!/bin/bash
 
 mkdir 16S_SILVA_DB
-mkdir HL1-9
+mkdir HL1-8
 curl -L https://figshare.com/ndownloader/files/40054801 -o 16S_SILVA_DB/database50mers.kmer_distrib
 curl -L https://figshare.com/ndownloader/files/40054804 -o 16S_SILVA_DB/database75mers.kmer_distrib
 curl -L https://figshare.com/ndownloader/files/40054807 -o 16S_SILVA_DB/database100mers.kmer_distrib
@@ -13,19 +13,19 @@ curl -L https://figshare.com/ndownloader/files/40054822 -o 16S_SILVA_DB/opts.k2d
 curl -L https://figshare.com/ndownloader/files/40054825 -o 16S_SILVA_DB/README.md
 curl -L https://figshare.com/ndownloader/files/40054828 -o 16S_SILVA_DB/taxo.k2d
 
-curl -L https://figshare.com/ndownloader/files/40056766 -o HL1-9/HL1_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056769 -o HL1-9/HL1_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056772 -o HL1-9/HL2_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056775 -o HL1-9/HL2_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056778 -o HL1-9/HL3_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056781 -o HL1-9/HL3_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056784 -o HL1-9/HL4_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056787 -o HL1-9/HL4_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056790 -o HL1-9/HL5_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056793 -o HL1-9/HL5_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056796 -o HL1-9/HL6_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056799 -o HL1-9/HL6_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056802 -o HL1-9/HL7_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056805 -o HL1-9/HL7_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056808 -o HL1-9/HL8_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056811 -o HL1-9/HL8_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056766 -o HL1-8/HL1_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056769 -o HL1-8/HL1_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056772 -o HL1-8/HL2_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056775 -o HL1-8/HL2_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056778 -o HL1-8/HL3_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056781 -o HL1-8/HL3_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056784 -o HL1-8/HL4_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056787 -o HL1-8/HL4_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056790 -o HL1-8/HL5_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056793 -o HL1-8/HL5_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056796 -o HL1-8/HL6_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056799 -o HL1-8/HL6_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056802 -o HL1-8/HL7_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056805 -o HL1-8/HL7_R2.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056808 -o HL1-8/HL8_R1.fastq.gz
+curl -L https://figshare.com/ndownloader/files/40056811 -o HL1-8/HL8_R2.fastq.gz
