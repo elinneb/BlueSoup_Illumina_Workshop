@@ -2,3 +2,6 @@
 
 mkdir singleM_DB
 curl -L https://zenodo.org/records/7955518/files/S3.2.0.GTDB_r214.metapackage_20230428.smpkg.zb.tar.gz?download=1 -o singleM_DB/S3.2.0.GTDB_r214.metapackage_20230428.smpkg.zb.tar.gz
+cd singleM_DB
+tar -xvzf S3.2.0.GTDB_r214.metapackage_20230428.smpkg.zb.tar.gz
+cd ..
