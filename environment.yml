@@ -5,10 +5,7 @@ channels:
   - defaults
 dependencies:
   - fastqc
-  - trimmomatic
-  - kraken2
-  - kraken-biom
-  - numpy
-  - biom-format
-  - parallel
   - multiqc
+  - singlem
+  - numpy
+
