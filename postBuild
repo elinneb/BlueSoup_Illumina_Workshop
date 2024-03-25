@@ -1,31 +1,4 @@
 #!/bin/bash
 
-mkdir SILVA_DB
-mkdir HL1-8
-curl -L https://figshare.com/ndownloader/files/40054801 -o SILVA_DB/database50mers.kmer_distrib
-curl -L https://figshare.com/ndownloader/files/40054804 -o SILVA_DB/database75mers.kmer_distrib
-curl -L https://figshare.com/ndownloader/files/40054807 -o SILVA_DB/database100mers.kmer_distrib
-curl -L https://figshare.com/ndownloader/files/40054810 -o SILVA_DB/database150mers.kmer_distrib
-curl -L https://figshare.com/ndownloader/files/40054813 -o SILVA_DB/database200mers.kmer_distrib
-curl -L https://figshare.com/ndownloader/files/40054816 -o SILVA_DB/database250mers.kmer_distrib
-curl -L https://figshare.com/ndownloader/files/40054819 -o SILVA_DB/hash.k2d
-curl -L https://figshare.com/ndownloader/files/40054822 -o SILVA_DB/opts.k2d
-curl -L https://figshare.com/ndownloader/files/40054825 -o SILVA_DB/README.md
-curl -L https://figshare.com/ndownloader/files/40054828 -o SILVA_DB/taxo.k2d
-
-curl -L https://figshare.com/ndownloader/files/40056766 -o HL1-8/HL1_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056769 -o HL1-8/HL1_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056772 -o HL1-8/HL2_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056775 -o HL1-8/HL2_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056778 -o HL1-8/HL3_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056781 -o HL1-8/HL3_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056784 -o HL1-8/HL4_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056787 -o HL1-8/HL4_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056790 -o HL1-8/HL5_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056793 -o HL1-8/HL5_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056796 -o HL1-8/HL6_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056799 -o HL1-8/HL6_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056802 -o HL1-8/HL7_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056805 -o HL1-8/HL7_R2.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056808 -o HL1-8/HL8_R1.fastq.gz
-curl -L https://figshare.com/ndownloader/files/40056811 -o HL1-8/HL8_R2.fastq.gz
+mkdir singleM_DB
+curl -L https://zenodo.org/records/7955518/files/S3.2.0.GTDB_r214.metapackage_20230428.smpkg.zb.tar.gz?download=1 -o singleM_DB/S3.2.0.GTDB_r214.metapackage_20230428.smpkg.zb.tar.gz
