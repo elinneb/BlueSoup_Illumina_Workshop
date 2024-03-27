@@ -1,38 +1,51 @@
-## Run a quality control check on ALL the raw fastq files in the folder "HL1-8"
 
-ls HL1-8/*.fastq.gz | parallel --gnu "fastqc {}"
+###############################################
+########## Run a quality check on the raw reads
+###############################################
 
+## Go into the folder with the fastq files
+cd ~/raw_fastqs
 
+## Run a quality control check on ALL the raw fastq files in the folder "fastq_files"
+fastqc *.fastq.gz
 
-## Trim/filter the raw fastq files, remove adapter sequences, and output paired and unpaired reads separately
-
-parallel --gnu "trimmomatic PE {1} {2} {1/.}_paired.fastq.gz {1/.}_unpaired.fastq.gz {2/.}_paired.fastq.gz {2/.}_unpaired.fastq.gz ILLUMINACLIP:AdapterSeqs-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:20" ::: HL1-8/*_R1.fastq.gz :::+ HL1-8/*_R2.fastq.gz
-
-
-
-## Re-run a quality control check on ALL the PAIRED, FILTERED fastq files
-
-ls *_paired.fastq.gz | parallel --gnu "fastqc {}"
+# run multiqc to get a single summary of the fasted outputs in one place
+multiqc .
 
 
-
-## Perform taxonomic classification of filtered reads against the 16S rRNA database, using the classifier program "Kraken2"
-
-parallel --gnu "kraken2 --paired --db SILVA_DB {1} {2} --report {1/.}.txt" ::: *_R1.fastq_paired.fastq.gz :::+ *_R2.fastq_paired.fastq.gz
+# My Binder isn't able to visualize multiqc data, so you need to download it to see
+# Right click on the "multiqc_report.html" output and download
+# Click to open in downloads and it should open in browser
 
 
 
-## Merge Kraken2 output files into a single "biom" table
+###############################################
+########## Trim and filter the raw reads to output trimmed and filtered sequencing reads
+###############################################
 
-kraken-biom HL1_R1.fastq_paired.fastq.txt HL2_R1.fastq_paired.fastq.txt HL3_R1.fastq_paired.fastq.txt HL4_R1.fastq_paired.fastq.txt HL5_R1.fastq_paired.fastq.txt HL6_R1.fastq_paired.fastq.txt HL7_R1.fastq_paired.fastq.txt HL8_R1.fastq_paired.fastq.txt -o merged_table.biom
-
-biom summarize-table -i merged_table.biom -o merged_table_summary.txt
-
-
-
-## Biom tables are hard to read, so convert biom table to "OTU" table, which has abundances of each consensus lineage
-
-biom convert -i merged_table.biom -o merged_OTU_table.txt --to-tsv --header-key taxonomy --output-metadata-id "ConsensusLineage"
+## Normally one trims/filters the raw sequencing reads before taxonomic profiling, but SingleM performs better on raw untrimmed reads.
 
 
+
+###############################################
+########## Run SingleM to perform taxonomic profiling
+###############################################
+
+
+##### START WITH RAW READS FOR SINGLEM #####
+
+## Run SingleM samples
+
+export SINGLEM_METAPACKAGE_PATH=~/singleM_DB/S3.2.1.GTDB_r214.metapackage_20231006.smpkg.zb
+
+cd /mnt/sdd/596-15_2024_fastq_files
+mkdir singlem_output
+
+
+
+# RUN THE BELOW FOR BATCH
+# samps example: samps=('L1_R' 'S2_S' 'S3_S' 'S4_S')
+
+samps=('L1_R')
+for i in "${samps[@]}"; do singlem pipe -1 "$i"_R1_sub.fastq.gz -2 "$i"_R2_sub.fastq.gz -p ~/singleM_output/"$i"_singlem_profile.tsv --taxonomic-profile-krona ~/singleM_output/"$i"_singlem_krona.html; done;
 
