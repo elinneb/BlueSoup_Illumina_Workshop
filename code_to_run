@@ -1,3 +1,13 @@
+###############################################
+########## Load subsetted fastq files that you will analyze
+###############################################
+
+# Double click on "raw_fastqs" folder
+# Either drag and drop or click "upload files" icon to upload fastq files
+# Make sure R1 and R2 of each sample are included
+# WAIT until the bar at the bottom of the screen is fully loaded!
+
+
 
 ###############################################
 ########## Run a quality check on the raw reads
@@ -14,8 +24,8 @@ multiqc .
 
 
 # My Binder isn't able to visualize multiqc data, so you need to download it to see
-# Right click on the "multiqc_report.html" output and download
-# Click to open in downloads and it should open in browser
+# Right click on the "multiqc_report.html" output and click download
+# Click to open in your downloads folder - it should open in web browser
 
 
 
@@ -34,7 +44,7 @@ multiqc .
 
 ##### START WITH RAW READS FOR SINGLEM #####
 
-## Run SingleM samples
+## Run SingleM on samples
 
 ## If needed, reset the path to the SingleM database files
 export SINGLEM_METAPACKAGE_PATH=~/singleM_DB/S3.2.1.GTDB_r214.metapackage_20231006.smpkg.zb
@@ -45,5 +55,4 @@ export SINGLEM_METAPACKAGE_PATH=~/singleM_DB/S3.2.1.GTDB_r214.metapackage_202310
 
 samps=('L1_R' 'S2_S' 'S3_S' 'S4_S')
 for i in "${samps[@]}"; do singlem pipe -1 "$i"_R1_sub.fastq.gz -2 "$i"_R2_sub.fastq.gz -p ~/singleM_output/"$i"_singlem_profile.tsv --taxonomic-profile-krona ~/singleM_output/"$i"_singlem_krona.html; done;
-
 
