@@ -1,6 +1,5 @@
 #!/bin/bash
 
-mkdir megahit_output
 mkdir raw_fastqs/trimmed_paired
 mkdir sourmash_DB
 curl -L https://figshare.com/ndownloader/files/47195053 -o sourmash_DB/genbank-k31.lca.json.gz
