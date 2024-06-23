@@ -27,7 +27,7 @@ fastqc *.fq.gz
 ###############################################
 
 ## Run trimmomatic to export high quality, paired reads
-trimmomatic PE BS_R1.fq.gz BS_R2.fq.gz trimmed_paired/BS_R1_paired.fastq.gz BS_R1_unpaired.fastq.gz trimmed_paired/BS_R2_paired.fastq.gz BS_R2_unpaired.fastq.gz ILLUMINACLIP:TruSeq-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:20 
+trimmomatic PE BS_R1.fq.gz BS_R2.fq.gz trimmed_paired/BS_R1_paired.fastq.gz BS_R1_unpaired.fastq.gz trimmed_paired/BS_R2_paired.fastq.gz BS_R2_unpaired.fastq.gz ILLUMINACLIP:TruSeq-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:20 MINLEN:30 
 
 
 
@@ -51,10 +51,10 @@ fastqc *_paired.fastq.gz
 unicycler -1 BS_R1_paired.fastq.gz -2 BS_R2_paired.fastq.gz -o ~/unicycler_output
 
 ## Bring the terminal into the folder with the assembled genome
-cd ~/megahit_output
+cd ~/unicycler_output
 
 ## Use the bbtools "reformat" program to only keep contigs >1kb
-~/bbmap/reformat.sh in=final.contigs.fa out=assembly_min1000.fasta minlength=1000
+~/bbmap/reformat.sh in=assembly.fasta out=assembly_min1000.fasta minlength=1000
 
 ## Run Bioinformatics Tools "bit" to summarize the genome assembly (how complete is the puzzle?)
 bit-summarize-assembly assembly_min1000.fasta
