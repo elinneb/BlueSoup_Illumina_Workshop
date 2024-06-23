@@ -3,14 +3,12 @@ channels:
   - conda-forge
   - bioconda
   - defaults
-  - astrobiomike
 dependencies:
   - fastqc
   - trimmomatic
   - unicycler
   - sourmash
   - fastani
-  - bit
   - numpy
 
 
