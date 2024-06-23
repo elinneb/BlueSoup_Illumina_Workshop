@@ -7,8 +7,8 @@ channels:
 dependencies:
   - fastqc
   - trimmomatic
-  - unicycler
   - singlem
+  - unicycler
   - fastani
   - numpy
   - bit
