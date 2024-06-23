@@ -1,4 +1,5 @@
 #!/bin/bash
 
+mkdir unicycler_output
 mkdir sourmash_DB
 curl -L https://figshare.com/ndownloader/files/47195053 -o sourmash_DB/genbank-k31.lca.json.gz
