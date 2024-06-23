@@ -9,8 +9,9 @@ dependencies:
   - trimmomatic
   - singlem
   - unicycler
+  - bit
   - fastani
   - numpy
-  - bit
+
 
 
