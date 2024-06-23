@@ -54,10 +54,10 @@ unicycler -1 BS_R1_paired.fastq.gz -2 BS_R2_paired.fastq.gz -o ~/unicycler_outpu
 cd ~/unicycler_output
 
 ## Use the bbtools "reformat" program to only keep contigs >1kb
-~/bbmap/reformat.sh in=assembly.fasta out=assembly_min1000.fasta minlength=1000
+~/bbmap/reformat.sh in=assembly.fasta out=BS_assembly_min1000.fasta minlength=1000
 
 ## Run Bioinformatics Tools "bit" to summarize the genome assembly (how complete is the puzzle?)
-bit-summarize-assembly assembly_min1000.fasta
+bit-summarize-assembly BS_assembly_min1000.fasta
 
 
 ###############################################
