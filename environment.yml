@@ -8,7 +8,7 @@ dependencies:
   - fastqc
   - trimmomatic
   - unicycler
-  - sourmash
+  - singlem
   - fastani
   - numpy
   - bit
