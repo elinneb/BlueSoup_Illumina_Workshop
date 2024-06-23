@@ -7,7 +7,7 @@ channels:
 dependencies:
   - fastqc
   - trimmomatic
-  - unicycler
+  - megahit
   - sourmash
   - fastani
   - numpy
