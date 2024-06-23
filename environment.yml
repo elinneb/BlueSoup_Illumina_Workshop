@@ -10,6 +10,7 @@ dependencies:
   - unicycler
   - sourmash
   - fastani
-  - numpy
   - bit
+  - numpy
+
 
