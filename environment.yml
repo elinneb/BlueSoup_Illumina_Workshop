@@ -3,6 +3,7 @@ channels:
   - conda-forge
   - bioconda
   - defaults
+  - astrobiomike
 dependencies:
   - fastqc
   - trimmomatic
@@ -10,8 +11,6 @@ dependencies:
   - sourmash
   - fastani
   - numpy
-  - pip
-  - pip:
-    - assemblyStatistics
+  - bit
 
 
