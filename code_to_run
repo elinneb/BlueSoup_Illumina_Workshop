@@ -27,7 +27,7 @@ fastqc *.fq.gz
 ###############################################
 
 ## Run trimmomatic to export high quality, paired reads
-trimmomatic PE BS_R1.fq.gz BS_R2.fq.gz trimmed_paired/BS_R1_paired.fastq.gz BS_R1_unpaired.fastq.gz trimmed_paired/BS_R2_paired.fastq.gz BS_R2_unpaired.fastq.gz ILLUMINACLIP:TruSeq-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:20
+trimmomatic PE BS_R1.fq.gz BS_R2.fq.gz trimmed_paired/BS_R1_paired.fastq.gz BS_R1_unpaired.fastq.gz trimmed_paired/BS_R2_paired.fastq.gz BS_R2_unpaired.fastq.gz ILLUMINACLIP:TruSeq-PE.fa:2:30:10:8:true SLIDINGWINDOW:4:20 
 
 
 
@@ -48,7 +48,7 @@ fastqc *_paired.fastq.gz
 ###############################################
 
 ## Run megahit to assemble short reads into contigs
-megahit -1 BS_R1_paired.fastq.gz -2 BS_R2_paired.fastq.gz -o ~/megahit_output
+unicycler -1 BS_R1_paired.fastq.gz -2 BS_R2_paired.fastq.gz -o ~/unicycler_output
 
 ## Bring the terminal into the folder with the assembled genome
 cd ~/megahit_output
