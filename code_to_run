@@ -61,14 +61,14 @@ bit-summarize-assembly BS_assembly_min1000.fasta
 
 
 ###############################################
-########## Run sourmash to perform taxonomic profiling
+########## Run SingleM to perform taxonomic profiling
 ###############################################
 
-### Create a "sketch" of our assmbled genome
-sourmash sketch dna -p scaled=1000,k=31 --name-from-first BS_assembly_min1000.fasta
+## Set the path to the SingleM database files
+export SINGLEM_METAPACKAGE_PATH=~/singleM_DB/S3.2.1.GTDB_r214.metapackage_20231006.smpkg.zb
 
-## Run sourmash "classify" to assign taxonomy to our genome "sketch" using the genbank database
-sourmash lca classify --db genbank-k31.lca.json.gz --query BS_assembly_min1000.fasta.sig
+## Run SingleM on assembly
+singlem pipe -i BS_assembly_min1000.fasta -p ~/singleM_output/BS_singlem_profile.tsv --taxonomic-profile-krona ~/singleM_output/BS_singlem_krona.html
 
 
 ###############################################
