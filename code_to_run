@@ -48,16 +48,13 @@ fastqc *_paired.fastq.gz
 ###############################################
 
 ## Run megahit to assemble short reads into contigs
-unicycler -1 BS_R1_paired.fastq.gz -2 BS_R2_paired.fastq.gz -o ~/unicycler_output
+unicycler -1 BS_R1_paired.fastq.gz -2 BS_R2_paired.fastq.gz -o ~/unicycler_output --min_fasta_length 1000
 
 ## Bring the terminal into the folder with the assembled genome
 cd ~/unicycler_output
 
-## Use the bbtools "reformat" program to only keep contigs >1kb
-~/bbmap/reformat.sh in=assembly.fasta out=BS_assembly_min1000.fasta minlength=1000
-
 ## Run Bioinformatics Tools "bit" to summarize the genome assembly (how complete is the puzzle?)
-bit-summarize-assembly BS_assembly_min1000.fasta
+bit-summarize-assembly assembly.fasta
 
 
 ###############################################
@@ -82,9 +79,9 @@ bit-summarize-assembly BS_assembly_min1000.fasta
 
 ## Compare BlueSoup genome assembly to the genomes from the Blue Soy Milk paper using fastANI
 # Genome 1
-fastANI -q BS_assembly_min1000.fasta -r BlueSoyMilk_Genomes/MED3_GCA_019097565.1_ASM1909756v1_genomic.fna -o BS_carnisMED3
+fastANI -q assembly.fasta -r BlueSoyMilk_Genomes/MED3_GCA_genomic.fna -o BS_carnisMED3
 # Genome 2
-fastANI -q BS_assembly_min1000.fasta -r BlueSoyMilk_Genomes/MED7_GCA_019097535.1_ASM1909753v1_genomic.fna -o BS_carnisMED7
+fastANI -q assembly.fasta -r BlueSoyMilk_Genomes/MED7_GCA_genomic.fna -o BS_carnisMED7
 
 
 
