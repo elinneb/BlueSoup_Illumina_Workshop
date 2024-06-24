@@ -7,7 +7,6 @@ channels:
 dependencies:
   - fastqc
   - trimmomatic
-  - singlem
   - unicycler
   - bit
   - fastani
