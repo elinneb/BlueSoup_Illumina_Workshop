@@ -79,9 +79,9 @@ bit-summarize-assembly assembly.fasta
 
 ## Compare BlueSoup genome assembly to the genomes from the Blue Soy Milk paper using fastANI
 # Genome 1
-fastANI -q assembly.fasta -r BlueSoyMilk_Genomes/MED3_GCA_genomic.fna -o BS_carnisMED3
+fastANI -q assembly.fasta -r ~/BlueSoyMilk_Genomes/MED3_GCA_genomic.fna -o BS_carnisMED3
 # Genome 2
-fastANI -q assembly.fasta -r BlueSoyMilk_Genomes/MED7_GCA_genomic.fna -o BS_carnisMED7
+fastANI -q assembly.fasta -r ~/BlueSoyMilk_Genomes/MED7_GCA_genomic.fna -o BS_carnisMED7
 
 
 
