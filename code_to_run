@@ -61,14 +61,19 @@ bit-summarize-assembly BS_assembly_min1000.fasta
 
 
 ###############################################
-########## Run SingleM to perform taxonomic profiling
+########## Run BLAST to perform taxonomic profiling
 ###############################################
 
-## Set the path to the SingleM database files
-export SINGLEM_METAPACKAGE_PATH=~/singleM_DB/S3.2.1.GTDB_r214.metapackage_20231006.smpkg.zb
+## Open the Blue Soup Genome assembly fasta file in a simple text editor like TextEdit or Notepad
 
-## Run SingleM on assembly
-singlem pipe -i BS_assembly_min1000.fasta -p ~/singleM_output/BS_singlem_profile.tsv --taxonomic-profile-krona ~/singleM_output/BS_singlem_krona.html
+## Highlight and copy a few thousand bases of the first contig
+
+## Go to blastn (nucelotide BLAST) website: https://www.ncbi.nlm.nih.gov/geo/query/blast.html
+
+## Paste the copied sequence into the Query box. You can leave all other options default
+
+## Hit BLAST and observe top hits
+
 
 
 ###############################################
