@@ -44,7 +44,7 @@ fastqc *_paired.fastq.gz
 
 
 ###############################################
-########## Assemble and quality control genome with megahit
+########## Assemble and quality control genome with unicycler and bit
 ###############################################
 
 ## Run megahit to assemble short reads into contigs
@@ -58,7 +58,7 @@ bit-summarize-assembly assembly.fasta
 
 
 ###############################################
-########## Run BLAST to perform taxonomic profiling
+########## Run BLAST to check taxonomy
 ###############################################
 
 ## Open the Blue Soup Genome assembly fasta file in a simple text editor like TextEdit or Notepad
